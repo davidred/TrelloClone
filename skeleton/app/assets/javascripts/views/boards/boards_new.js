@@ -24,20 +24,20 @@ TrelloClone.Views.BoardNew = Backbone.View.extend({
 
     var attrs = $(event.currentTarget).serializeJSON();
 
-    function success () {
-      Backbone.history.navigate("", { trigger: true });
+    function success (board) {
+      Backbone.history.navigate("#/boards/" + board.id, { trigger: true });
     }
 
     this.model.set(attrs);
     if (this.model.isNew()) {
       this.collection.create(this.model, {
-        success: success,
+        success: success.bind(this.model),
 
         wait: true
       });
     } else {
       this.model.save({}, {
-        success: success
+        success: success.bind(this.model)
       });
     }
   }

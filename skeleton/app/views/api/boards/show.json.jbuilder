@@ -5,3 +5,4 @@
 
 json.set! :id, @board.id
 json.set! :title, @board.title
+json.set! :lists, @board.lists
