@@ -1,6 +1,34 @@
 TrelloClone.Views.BoardShow = Backbone.View.extend({
   template: JST['boards/show'],
 
+  className: 'board-container',
+
+  events: {
+    "click .addList" : "addList",
+    "click": "hideNewListForm"
+  },
+
+  addList: function(event) {
+    event.preventDefault();
+    $('.newList').removeClass('inactive');
+    $(event.currentTarget).addClass('inactive');
+  },
+
+  hideNewListForm: function(event) {
+    if ($(event.target).hasClass('addList')) {
+      $('.newList').removeClass('inactive');
+      $('.addList').addClass('inactive');
+    } else {
+      if ($(event.target).hasClass('newList') || $(event.target).is('input')) {
+
+      } else {
+        $('.newList').addClass('inactive');
+        $('.addList').removeClass('inactive');
+      }
+
+    }
+  },
+
   initialize: function() {
 
     this.listenTo(this.model, "sync", this.render);
@@ -22,7 +50,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
         model: list
       });
 
-      view.$el.find('#lists').append(listShowView.render().$el);
+      view.$el.find('.lists').append(listShowView.render().$el);
 
     });
 
@@ -36,8 +64,8 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
       model: newList
     });
 
-    this.$el.find('#lists').append(listNewView.render().$el);
-    this.$el.find('#lists').append('<li id="addList"><a href="#/boards/'+this.model.id+'/lists/new">Add a list...</a></li>')
+    this.$el.find('.lists').append(listNewView.render().$el);
+    this.$el.find('.lists').append('<li class="addList"><a class="addList" href="#">Add a list...</a></li>')
     return this;
 
   }
