@@ -17,7 +17,7 @@
 @import "bootstrap";
 @import "font-awesome";
 
-.content, .backdrop, body, #main, h1, div, ul, a, li  {
+.content, .backdrop, body, #main, h1, div, ul, a, li, button  {
   padding: 0;
   margin: 0;
   border: 0;
@@ -29,12 +29,19 @@ ul {
   list-style: none;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background: #23719F;
+  height: 100%;
+  width: 100%;
 }
 
 .content {
-
+  width: 100%;
+  height: 100%;
 }
 
 .backdrop {
@@ -58,13 +65,54 @@ h1 {
 #lists > li {
   float: left;
   background: #e3e3e3;
-  width: 190px;
-  padding: 10px;
+  width: 250px;
+  padding: 5px;
   border-radius: 5px;
-  margin: 50px 20px 0 0;
+  margin: 0 10px 0 0;
   color: black;
   font-size: 15px;
   font-weight: bold;
+}
+
+#lists > #addList {
+  padding: 0;
+  height: 40px;
+  background: #1E648C;
+}
+
+#addList a {
+  display: block;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: #B4C8D2;
+  width: 100%;
+  height: 100%;
+  background: #1E648C;
+}
+
+.addList.inactive {
+  display: none;
+}
+
+.newList.inactive {
+  display: none;
+}
+
+.newList > input {
+  padding: 5px;
+  background: #d7d7d7;
+  font-weight: normal;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.newList > button {
+  margin-top: 5px;
+  padding: 7px 20px;
+  color: white;
+  background: #1E8C23;
+  border-radius: 5px;
+
 }
 
 #lists li a {

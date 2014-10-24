@@ -1,5 +1,7 @@
 TrelloClone.Views.ListNew = Backbone.View.extend({
-  tagname: 'li',
+  tagName: 'li',
+
+  className: 'newList inactive',
 
   template: JST['lists/new'],
 

@@ -27,8 +27,17 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     });
 
     //append new list view
+    // var newList = new TrelloClone.Models.List([], { board: board });
+ //    var newListView = new TrelloClone.Views.ListNew({
+ //      model: newList
+ //    });
+    var newList = new TrelloClone.Models.List([], { board: this.model});
+    var listNewView = new TrelloClone.Views.ListNew({
+      model: newList
+    });
 
-    this.$el.find('#lists').append('<li><a href="#/boards/'+this.model.id+'/lists/new">Add a list...</a></li>')
+    this.$el.find('#lists').append(listNewView.render().$el);
+    this.$el.find('#lists').append('<li id="addList"><a href="#/boards/'+this.model.id+'/lists/new">Add a list...</a></li>')
     return this;
 
   }
