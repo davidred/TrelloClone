@@ -26,6 +26,9 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
 
     });
 
+    //append new list view
+
+    this.$el.find('#lists').append('<li><a href="#/boards/'+this.model.id+'/lists/new">Add a list...</a></li>')
     return this;
 
   }

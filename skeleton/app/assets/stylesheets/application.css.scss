@@ -13,5 +13,73 @@
  *= require_tree .
  */
 
+
 @import "bootstrap";
 @import "font-awesome";
+
+.content, .backdrop, body, #main, h1, div, ul, a, li  {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font: inherit;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background: #23719F;
+}
+
+.content {
+
+}
+
+.backdrop {
+
+}
+
+#main {
+
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
+#lists {
+
+}
+
+#lists > li {
+  float: left;
+  background: #e3e3e3;
+  width: 190px;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 50px 20px 0 0;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#lists li a {
+  font-weight: normal;
+}
+
+.cards {
+  font-size: 10px;
+  font-weight: normal;
+}
+
+.cards > li {
+  padding: 10px;
+  margin-top: 5px;
+  background: white;
+  border-radius: 5px;
+}
+
