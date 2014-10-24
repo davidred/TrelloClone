@@ -1,0 +1,23 @@
+<h1>New Card</h1>
+
+<form role="form">
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="text" 
+					 name="card[title]" 
+					 value="<%= card.escape('title') %>"
+					 placeholder="new card"
+					 id="title"
+					 class="form-control">
+	</div>
+
+	<div class="form-group">
+		<label for="description">Description</label>
+		<textarea name="card[description]" 
+							id="description"
+							placeholder="This is what I want to do"
+							class="form-control"><%= card.escape('description') %></textarea>
+	</div>
+
+	<button type="submit" class="btn btn-lg btn-primary">Submit</button>
+</form>

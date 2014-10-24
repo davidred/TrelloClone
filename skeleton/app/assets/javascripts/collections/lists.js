@@ -7,6 +7,10 @@ TrelloClone.Collections.Lists = Backbone.Collection.extend({
 
   initialize: function (models, options) {
     this.board = options.board;
-  }
+  },
+	
+	getOrFetch: function (models, options) {
+		
+	}
 
 });

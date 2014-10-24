@@ -3,6 +3,9 @@
 #  - its lists
 #    - the cards for each list
 
-json.set! :id, @board.id
-json.set! :title, @board.title
-json.set! :lists, @board.lists
+json.board @board, :id, :title
+json.lists do @board.lists, :title
+
+json.lists @board.lists do |json, list|
+	json.list list, :title, :board_id
+end
