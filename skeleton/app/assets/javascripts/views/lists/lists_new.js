@@ -33,10 +33,8 @@ TrelloClone.Views.ListNew = Backbone.View.extend({
 
     var list = new TrelloClone.Models.List(attrs, {board: this.model.board});
     list.save({}, {
-      success: function () {
-        debugger
-        // Backbone.history.navigate("#/boards/"+view.model.board.id, {
-//           trigger: true });
+      success: function (list) {
+        list.board._lists.add(list);
       },
     });
   }
