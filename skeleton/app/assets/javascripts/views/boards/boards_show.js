@@ -25,12 +25,10 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
         $('.newList').addClass('inactive');
         $('.addList').removeClass('inactive');
       }
-
     }
   },
 
   initialize: function() {
-
     this.listenTo(this.model, "sync", this.render);
     this.listenTo(this.model.lists(), "sync", this.render);
   },
@@ -54,11 +52,6 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
 
     });
 
-    //append new list view
-    // var newList = new TrelloClone.Models.List([], { board: board });
- //    var newListView = new TrelloClone.Views.ListNew({
- //      model: newList
- //    });
     var newList = new TrelloClone.Models.List([], { board: this.model});
     var listNewView = new TrelloClone.Views.ListNew({
       model: newList
@@ -68,15 +61,5 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
     this.$el.find('.lists').append('<li class="addList"><a class="addList" href="#">Add a list...</a></li>')
     return this;
 
-  }
+  },
 });
-
-
-    //create Lists Index view
-    // var listView = new TrelloClone.Views.ListsIndex({
-    //   collection: this.model.lists()
-    // });
-    // //append list index view to
-    // this.$el.find('#lists').append(listView.render().$el);
-    // return this;
-

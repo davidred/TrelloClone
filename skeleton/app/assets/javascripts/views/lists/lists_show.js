@@ -23,8 +23,18 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
       });
       view.$el.find('.cards').append(cardShowView.render().$el);
       //view.$el.find('.cards').append('<li>hello</li>');
-
     });
+
+    var newCard = new TrelloClone.Models.Card({
+      list: this.model
+    });
+
+
+    var newCardView = new TrelloClone.Views.CardNew({
+      model: newCard
+    })
+
+    view.$el.find('.cards').append(newCardView.render().$el);
 
     return this;
   },
