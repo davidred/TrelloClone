@@ -141,6 +141,7 @@ h1 {
 }
 
 .cards > li {
+  position: relative;
   padding: 10px;
   margin-top: 5px;
   background: white;
@@ -154,4 +155,19 @@ h1 {
 
 .cards > li.add-card:hover {
   background: #ccc;
+}
+
+.delete {
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  cursor: pointer;
+  padding: 5px 5px;
+}
+
+.delete:hover {
+  color: #ccc;
 }

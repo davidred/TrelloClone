@@ -12,6 +12,12 @@ module Api
       end
     end
 
+    def destroy
+      @card = Card.find(params[:id])
+      @card.destroy
+      render json: @card
+    end
+
     def update
       @card = Card.find(params[:id])
       if @card.update_attributes(card_params)
@@ -36,6 +42,10 @@ module Api
     def current_board
       current_list.board
     end
+
+
+
+    private
 
     def card_params
       params.require(:card).permit(:title, :list_id, :ord, :description)

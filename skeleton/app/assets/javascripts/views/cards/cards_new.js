@@ -13,7 +13,6 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
 	render: function() {
 		var renderedContent = this.template({
 			card: this.model
-
 		});
 
     this.$el.html(renderedContent);
@@ -24,11 +23,11 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
 	submit: function(event) {
 		var attrs = $(event.currentTarget).serializeJSON();
 		attrs.card.list_id = this.model.list.id;
-
+		var view=this;
 		var card = new TrelloClone.Models.Card(attrs, {list: this.model.list});
-		card.save({}, {
+		card.save(attrs, {
 			success: function (card) {
-				card.list.cards().add(card);
+				view.model.cards().add(card);
 			},
 		});
 	},
