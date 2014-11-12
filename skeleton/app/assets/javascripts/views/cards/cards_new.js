@@ -1,4 +1,8 @@
 TrelloClone.Views.CardNew = Backbone.View.extend({
+	tagName: 'li',
+
+	className: 'new-card-form inactive',
+
 	template: JST['cards/new'],
 
 	events: {
@@ -6,7 +10,6 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
 	},
 
 	render: function() {
-		debugger
 		var renderedContent = this.template({
 			card: this.model
 

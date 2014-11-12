@@ -67,7 +67,8 @@ h1 {
 }
 
 .lists {
-
+  margin-top: 30px;
+  min-width: 100000px;
 }
 
 .lists > li {
@@ -81,6 +82,8 @@ h1 {
   font-size: 15px;
   font-weight: bold;
 }
+
+
 
 .lists > .addList {
   padding: 0;
@@ -100,6 +103,10 @@ h1 {
 }
 
 .addList.inactive {
+  display: none;
+}
+
+.new-card-form.inactive {
   display: none;
 }
 
@@ -140,3 +147,11 @@ h1 {
   border-radius: 5px;
 }
 
+.cards > li.add-card {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cards > li.add-card:hover {
+  background: #ccc;
+}
