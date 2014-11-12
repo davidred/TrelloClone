@@ -6,7 +6,8 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
 	template: JST['cards/new'],
 
 	events: {
-		"submit form" : "submit"
+		"submit form" : "submit",
+		"click button.cancel": "cancel",
 	},
 
 	render: function() {
@@ -30,5 +31,10 @@ TrelloClone.Views.CardNew = Backbone.View.extend({
 				card.list.cards().add(card);
 			},
 		});
-	}
+	},
+
+	cancel: function(event) {
+		event.preventDefault();
+		$(event.currentTarget).parent().parent().addClass('inactive')
+	},
 });

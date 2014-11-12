@@ -7,6 +7,7 @@ TrelloClone.Views.ListNew = Backbone.View.extend({
 
   events: {
     "submit form": "submit",
+
   },
 
   initialize: function() {
@@ -37,6 +38,7 @@ TrelloClone.Views.ListNew = Backbone.View.extend({
         list.board._lists.add(list);
       },
     });
-  }
+  },
+
 
 });
